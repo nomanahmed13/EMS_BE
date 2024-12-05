@@ -126,24 +126,24 @@ router.put("/:id", upload.single("image"), async (req, res) => {
   }
 });
 
-// // Delete an event
-// router.delete("/:id", async (req, res) => {
-//   try {
-//     const event = await Event.findByIdAndDelete(req.params.id);
+// Delete an event
+router.delete("/:id", async (req, res) => {
+  try {
+    const event = await Event.findByIdAndDelete(req.params.id);
 
-//     if (!event) {
-//       return res.status(404).json({ error: "Event not found." });
-//     }
+    if (!event) {
+      return res.status(404).json({ error: "Event not found." });
+    }
 
-//     res.status(200).json({
-//       message: "Event deleted successfully.",
-//       deletedEvent: event,
-//     });
-//   } catch (err) {
-//     res.status(500).json({
-//       error: "Failed to delete event. Ensure valid ID or try again.",
-//     });
-//   }
-// });
+    res.status(200).json({
+      message: "Event deleted successfully.",
+      deletedEvent: event,
+    });
+  } catch (err) {
+    res.status(500).json({
+      error: "Failed to delete event. Ensure valid ID or try again.",
+    });
+  }
+});
 
 module.exports = router;

@@ -11,7 +11,7 @@ connectDB();
 
 // Middleware
 app.use(express.json());
-app.use(cors({ origin: "http://localhost:5174", credentials: true, allowedHeaders: ["Content-Type", "Authorization"], }));
+app.use(cors({ origin: "http://localhost:5175", credentials: true, allowedHeaders: ["Content-Type", "Authorization"], }));
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // Define Routes

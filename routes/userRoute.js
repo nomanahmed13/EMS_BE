@@ -98,6 +98,8 @@ router.post(
       res.status(200).json({
         message: "Login successful.",
         token,
+        role: user.role,
+        email: user.email,
       });
     } catch (error) {
       console.error(error);
